@@ -5,7 +5,7 @@ import heroImage from '../../images/hero.jpg';
 
 const useStyles = makeStyles((theme) => ({
   heroSection: {
-    height: '100vh',
+    height: '100%',
 
     backgroundColor:
       theme.palette.type === 'dark'
@@ -18,16 +18,39 @@ const useStyles = makeStyles((theme) => ({
   },
   heroSectionTitle: {
     position: 'absolute',
-    top: '50%',
+    top: '40%',
     left: '50%',
 
     fontFamily: 'Fair Prosper,sans-serif',
     fontSize: '9rem',
-    letterSpacing: '1rem',
+
     color: '#fff',
+    letterSpacing: '1rem',
 
     transform: 'translate(-50%, -50%)',
     opacity: 0.8,
+  },
+  triangle: {
+    position: 'absolute',
+    bottom: 10,
+    left: '50%',
+
+    width: 0,
+    height: 0,
+
+    transform: 'translate(-50%, -50%)',
+  },
+  outerTriangle: {
+    borderTop: '50px solid #fff',
+    borderLeft: '50px solid transparent',
+    borderRight: '50px solid transparent',
+  },
+  innerTriangle: {
+    bottom: 12,
+
+    borderBottom: '25px solid #000',
+    borderLeft: '25px solid transparent',
+    borderRight: '25px solid transparent',
   },
 }));
 
@@ -36,6 +59,9 @@ const Hero = () => {
   return (
     <div className={classes.heroSection}>
       <h1 className={classes.heroSectionTitle}>HELLO</h1>
+      <div className={`${classes.triangle} ${classes.outerTriangle}`}>
+        <div className={`${classes.triangle} ${classes.innerTriangle}`} />
+      </div>
     </div>
   );
 };
