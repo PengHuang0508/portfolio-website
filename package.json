@@ -14,11 +14,11 @@
     "aos": "^2.3.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
-    "react-reveal": "^1.2.2"
+    "react-reveal": "^1.2.2",
+    "react-scripts": "^3.4.3"
   },
   "scripts": {
-    "start": "node index.js",
-    "dev-start": "react-scripts start",
+    "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -38,7 +38,5 @@
       "last 1 safari version"
     ]
   },
-  "devDependencies": {
-    "react-scripts": "^3.4.3"
-  }
+  "devDependencies": {}
 }
