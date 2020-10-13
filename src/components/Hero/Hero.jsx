@@ -21,14 +21,33 @@ const useStyles = makeStyles((theme) => ({
     top: '40%',
     left: '50%',
 
-    fontFamily: 'Fair Prosper,sans-serif',
+    fontFamily: 'Fair Prosper, sans-serif',
     fontSize: '9rem',
+    textShadow:
+      '0 0 10px, 0 5px 0.5em #09fbd3, 5px 0 0.5em #5b0c6b, 0 0 0.1em #9b33b0, 0 10px 3px #000',
 
     color: '#fff',
     letterSpacing: '1rem',
 
-    transform: 'translate(-50%, -50%)',
     opacity: 0.8,
+    transform: 'translate(-50%, -50%)',
+
+    '& span': {
+      letterSpacing: '2rem',
+
+      animation: 'neon-blink linear infinite 2s',
+    },
+
+    '& span:nth-of-type(2)': {
+      animation: 'neon-blink 3s ease-in-out infinite alternate',
+    },
+
+    [theme.breakpoints.down('sm')]: {
+      fontSize: '5rem',
+    },
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '4rem',
+    },
   },
   triangle: {
     position: 'absolute',
@@ -38,19 +57,12 @@ const useStyles = makeStyles((theme) => ({
     width: 0,
     height: 0,
 
-    transform: 'translate(-50%, -50%)',
-  },
-  outerTriangle: {
-    borderTop: '50px solid #fff',
-    borderLeft: '50px solid transparent',
-    borderRight: '50px solid transparent',
-  },
-  innerTriangle: {
-    bottom: 12,
+    borderTop: '30px solid #78e8ff',
+    borderLeft: '30px solid transparent',
+    borderRight: '30px solid transparent',
 
-    borderBottom: '25px solid #000',
-    borderLeft: '25px solid transparent',
-    borderRight: '25px solid transparent',
+    transform: 'translate(-50%, -50%)',
+    animation: 'hovering 3s ease-in-out infinite',
   },
 }));
 
@@ -58,10 +70,10 @@ const Hero = () => {
   const classes = useStyles();
   return (
     <div className={classes.heroSection}>
-      <h1 className={classes.heroSectionTitle}>HELLO</h1>
-      <div className={`${classes.triangle} ${classes.outerTriangle}`}>
-        <div className={`${classes.triangle} ${classes.innerTriangle}`} />
-      </div>
+      <h1 className={classes.heroSectionTitle}>
+        H<span>E</span>L<span>L</span>O
+      </h1>
+      <div className={classes.triangle} />
     </div>
   );
 };

@@ -3,11 +3,13 @@ import AOS from 'aos';
 
 import 'aos/dist/aos.css';
 // Layouts
-import FullViewHeightSection from './layouts/FullViewHeightSection';
+import FullViewportHeightSection from './layouts/FullViewportHeightSection';
 // Components
 import Hero from './components/Hero/Hero';
 import About from './components/About/About';
 import Vinyl from './components/Vinyl/Vinyl';
+import Work from './components/Work/Work';
+import Footer from './components/Footer/Footer';
 
 const App = () => {
   useEffect(() => {
@@ -15,11 +17,13 @@ const App = () => {
   }, []);
 
   return (
-    <div>
-      <FullViewHeightSection component={<Hero />} />
-      <FullViewHeightSection component={<About />} />
-      <FullViewHeightSection component={<Vinyl />} />
-    </div>
+    <React.Fragment>
+      <FullViewportHeightSection component={<Hero />} />
+      <FullViewportHeightSection component={<About />} />
+      <FullViewportHeightSection component={<Vinyl />} />
+      <Work />
+      <Footer />
+    </React.Fragment>
   );
 };
 

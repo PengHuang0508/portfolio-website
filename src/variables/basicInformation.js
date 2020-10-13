@@ -4,11 +4,11 @@ module.exports = [
     content: ['LIVING IN VANCOUVER', 'PROGRAMER', 'DESIGNER', 'PHOTOGRAPHER'],
   },
   {
-    title: 'LOVE',
-    content: ['NATURE', 'LANDSCAPE', 'AI & MACHINE LEARNING', '3D PRINTING'],
+    title: 'WHAT I LOVE',
+    content: ['NATURE', 'LANDSCAPE', 'LEARNING', 'IMPROVING'],
   },
   {
-    title: 'BOB ROSS',
-    content: ['YES YES YES_'],
+    title: "I'M INTERESTED IN",
+    content: ['AI & MACHINE LEARNING', '3D PRINTING', 'UI/UX', 'IoT'],
   },
 ];

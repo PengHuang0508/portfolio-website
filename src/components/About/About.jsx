@@ -2,8 +2,6 @@ import React from 'react';
 // MUI
 import Grid from '@material-ui/core/Grid';
 import Typography from '@material-ui/core/Typography';
-import Box from '@material-ui/core/Box';
-import Container from '@material-ui/core/Container';
 import { makeStyles } from '@material-ui/core/styles';
 // Files
 import aboutSectionImage from '../../images/about-section.png';
@@ -26,11 +24,26 @@ const useStyles = makeStyles((theme) => ({
   aboutSectionFirstName: {
     fontSize: '9rem',
     color: '#fff',
+
+    [theme.breakpoints.down('md')]: {
+      fontSize: '5rem',
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '2.5rem',
+    },
   },
   aboutSectionLastName: {
     fontSize: '12rem',
-    color: 'transparent',
-    textStroke: '0.01px #000',
+    color: '#000',
+
+    [theme.breakpoints.down('md')]: {
+      fontSize: '7rem',
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '5rem',
+    },
   },
   aboutSectionLeftRectangle: {
     position: 'absolute',
@@ -38,7 +51,11 @@ const useStyles = makeStyles((theme) => ({
     width: '30%',
     height: '30%',
 
-    backgroundColor: '#53BB94',
+    backgroundColor: '#53bb94',
+
+    [theme.breakpoints.down('sm')]: {
+      width: '100%',
+    },
   },
   aboutSectionRight: {
     display: 'flex',
@@ -57,13 +74,34 @@ const useStyles = makeStyles((theme) => ({
   aboutSectionRightRectangle: {
     position: 'absolute',
 
-    width: '20%',
-    height: '55%',
+    display: 'flex',
+    flexDirection: 'column',
+    padding: theme.spacing(2, 6),
 
-    backgroundColor: '#fff',
+    backgroundColor: '#ddd',
+
+    [theme.breakpoints.down('md')]: {
+      padding: theme.spacing(2, 5),
+    },
+    [theme.breakpoints.down('xs')]: {
+      padding: theme.spacing(0, 5),
+    },
   },
   textBox: {
-    margin: theme.spacing(1, 4),
+    margin: theme.spacing(2),
+    color: '#555',
+
+    [theme.breakpoints.down('md')]: {
+      margin: 0,
+    },
+  },
+  textBoxTitle: {
+    fontStyle: 'italic',
+    color: '#e81a62',
+
+    [theme.breakpoints.down('xs')]: {
+      fontSize: '0.8rem',
+    },
   },
 }));
 
@@ -72,19 +110,21 @@ const About = () => {
 
   const AboutMe = () =>
     basicInformation.map((section, index) => (
-      <Box key={index} className={classes.textBox}>
-        <Typography variant='h6'>{section.title}</Typography>
+      <div key={index} className={classes.textBox}>
+        <Typography className={classes.textBoxTitle} variant='h6'>
+          {section.title}
+        </Typography>
         {section.content.map((content, index) => (
           <Typography key={index} variant='subtitle2'>
             {content}
           </Typography>
         ))}
-      </Box>
+      </div>
     ));
 
   return (
     <Grid className={classes.aboutSection} container>
-      <Grid className={classes.aboutSectionLeft} item xs={12} sm={6}>
+      <Grid className={classes.aboutSectionLeft} item xs={12} md={6}>
         <div className={classes.aboutSectionLeftRectangle} />
         <h2
           className={`${classes.aboutSectionName} ${classes.aboutSectionLastName}`}
@@ -97,7 +137,7 @@ const About = () => {
           PENG
         </h2>
       </Grid>
-      <Grid className={classes.aboutSectionRight} item xs={12} sm={6}>
+      <Grid className={classes.aboutSectionRight} item xs={12} md={6}>
         <div className={classes.aboutSectionRightRectangle}>
           <AboutMe />
         </div>
