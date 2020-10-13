@@ -50,8 +50,8 @@ const useStyles = makeStyles((theme) => ({
 
     [theme.breakpoints.down('xs')]: {
       justifyContent: 'center',
-      width: '100%',
-      padding: theme.spacing(1),
+      maxWidth: '100%',
+      padding: theme.spacing(1, 5),
       textAlign: 'center',
     },
   },
