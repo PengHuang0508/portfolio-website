@@ -18,7 +18,7 @@ const useStyles = makeStyles((theme) => ({
   },
   aboutSectionName: {
     position: 'absolute',
-
+    margin: 0,
     fontFamily: 'Lexend Deca, sans-serif',
   },
   aboutSectionFirstName: {
@@ -81,10 +81,10 @@ const useStyles = makeStyles((theme) => ({
     backgroundColor: '#ddd',
 
     [theme.breakpoints.down('md')]: {
-      padding: theme.spacing(2, 5),
-    },
-    [theme.breakpoints.down('xs')]: {
-      padding: theme.spacing(0, 5),
+      flexDirection: 'row',
+      justifyContent: 'space-around',
+      width: '100%',
+      padding: theme.spacing(3, 0),
     },
   },
   textBox: {
@@ -92,7 +92,7 @@ const useStyles = makeStyles((theme) => ({
     color: '#555',
 
     [theme.breakpoints.down('md')]: {
-      margin: 0,
+      margin: theme.spacing(1),
     },
   },
   textBoxTitle: {

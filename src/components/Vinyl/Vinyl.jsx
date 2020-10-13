@@ -49,14 +49,15 @@ const useStyles = makeStyles((theme) => ({
     },
 
     [theme.breakpoints.down('xs')]: {
-      top: '265%',
-      left: '30%',
-      padding: 0,
-      background: 'none',
+      justifyContent: 'center',
+      width: '100%',
+      padding: theme.spacing(1),
+      textAlign: 'center',
     },
   },
   vinylCoverText: {
     flex: '1 0 50%',
+    marginLeft: '5px',
     textAlign: 'center',
 
     '&::after': {
@@ -64,6 +65,10 @@ const useStyles = makeStyles((theme) => ({
       content: '"BEAUTIFUL"',
 
       animation: 'changing-text 9s linear infinite',
+    },
+
+    [theme.breakpoints.down('xs')]: {
+      flex: '0',
     },
   },
 }));

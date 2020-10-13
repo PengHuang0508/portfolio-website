@@ -66,6 +66,9 @@ const useStyles = makeStyles((theme) => ({
   },
   projectCardMedia: {
     maxWidth: 40,
+    [theme.breakpoints.down('xs')]: {
+      maxWidth: 30,
+    },
   },
   projectCard: {
     display: 'flex',
