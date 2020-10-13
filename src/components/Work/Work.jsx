@@ -72,6 +72,9 @@ const useStyles = makeStyles((theme) => ({
     flexDirection: 'column',
     padding: theme.spacing(1, 2, 4, 2),
   },
+  projectCardContent: {
+    flex: '1 0 40%',
+  },
   projectCardActions: {
     flexWrap: 'wrap',
 
@@ -105,7 +108,7 @@ const Work = () => {
       >
         WORK
       </Typography>
-      {Array.from(new Array(4)).map((value, index) => (
+      {Array.from(new Array(5)).map((value, index) => (
         <Typography
           key={index}
           className={classes.sectionTitle}
@@ -149,7 +152,7 @@ const Work = () => {
               title={project.name}
               subheader={project.year}
             />
-            <CardContent>
+            <CardContent className={classes.projectCardContent}>
               <Typography variant='body2' color='textSecondary' component='p'>
                 {project.description}
               </Typography>
