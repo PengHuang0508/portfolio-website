@@ -56,10 +56,6 @@ const useStyles = makeStyles((theme) => ({
     alignItems: 'center',
     justifyContent: 'space-around',
     overflow: 'hidden',
-
-    [theme.breakpoints.down('sm')]: {
-      position: 'absolute',
-    },
   },
   projectContainer: {
     display: 'flex',
@@ -75,9 +71,6 @@ const useStyles = makeStyles((theme) => ({
     display: 'flex',
     flexDirection: 'column',
     padding: theme.spacing(1, 2, 4, 2),
-  },
-  projectCardContent: {
-    flex: '1 0 40%',
   },
   projectCardActions: {
     flexWrap: 'wrap',
@@ -112,7 +105,7 @@ const Work = () => {
       >
         WORK
       </Typography>
-      {Array.from(new Array(7)).map((value, index) => (
+      {Array.from(new Array(4)).map((value, index) => (
         <Typography
           key={index}
           className={classes.sectionTitle}
@@ -156,7 +149,7 @@ const Work = () => {
               title={project.name}
               subheader={project.year}
             />
-            <CardContent className={classes.projectCardContent}>
+            <CardContent>
               <Typography variant='body2' color='textSecondary' component='p'>
                 {project.description}
               </Typography>
