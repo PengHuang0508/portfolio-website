@@ -7,7 +7,7 @@ const chip = {
   firebase: {
     label: 'Firebase',
     backgroundColor: '#059be5',
-    textColor: '#F6820D',
+    textColor: '#faddb9',
   },
   javascript: {
     label: 'JavaScript',
@@ -22,7 +22,7 @@ const chip = {
   mysql: {
     label: 'MySQL',
     backgroundColor: '#00758f',
-    textColor: '#f29111',
+    textColor: '#e0a05e',
   },
   nginx: {
     label: 'Nginx',
@@ -47,7 +47,7 @@ const chip = {
   redux: {
     label: 'Redux',
     backgroundColor: '#764abc',
-    textColor: '#000',
+    textColor: '#fff',
   },
 };
 
@@ -62,11 +62,11 @@ module.exports = [
       chip.javascript,
       chip.react,
       chip.redux,
-      chip.materialUI,
       chip.node,
       chip.php,
       chip.mysql,
       chip.nginx,
+      chip.materialUI,
     ],
   },
   {
@@ -81,9 +81,9 @@ module.exports = [
       chip.react,
       chip.redux,
       chip.express,
-      chip.materialUI,
       chip.node,
       chip.firebase,
+      chip.materialUI,
     ],
   },
 ];

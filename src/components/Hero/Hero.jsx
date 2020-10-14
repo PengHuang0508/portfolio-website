@@ -1,4 +1,6 @@
 import React from 'react';
+import { useWindowSize } from '../../hooks/useWindowSize';
+// MUI
 import { makeStyles } from '@material-ui/core/styles';
 // Files
 import heroImage from '../../images/hero.jpg';
@@ -63,17 +65,29 @@ const useStyles = makeStyles((theme) => ({
 
     transform: 'translate(-50%, -50%)',
     animation: 'hovering 3s ease-in-out infinite',
+
+    '&:hover': {
+      cursor: 'pointer',
+    },
   },
 }));
 
 const Hero = () => {
   const classes = useStyles();
+
+  const windowSize = useWindowSize();
+  const windowHeight = windowSize.height;
+
+  const handleClick = () => {
+    window.scrollTo({ top: windowHeight, left: 0, behavior: 'smooth' });
+  };
+
   return (
     <div className={classes.heroSection}>
       <h1 className={classes.heroSectionTitle}>
         H<span>E</span>L<span>L</span>O
       </h1>
-      <div className={classes.triangle} />
+      <div className={classes.triangle} onClick={handleClick} />
     </div>
   );
 };

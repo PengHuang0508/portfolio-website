@@ -1,5 +1,6 @@
 import React from 'react';
 // MUI
+import ButtonBase from '@material-ui/core/ButtonBase';
 import Card from '@material-ui/core/Card';
 import CardActions from '@material-ui/core/CardActions';
 import CardContent from '@material-ui/core/CardContent';
@@ -73,7 +74,11 @@ const useStyles = makeStyles((theme) => ({
   projectCard: {
     display: 'flex',
     flexDirection: 'column',
-    padding: theme.spacing(1, 2, 4, 2),
+    alignItems: 'flex-start',
+    height: '100%',
+    padding: theme.spacing(2, 0),
+
+    textAlign: 'initial',
   },
   projectCardContent: {
     flex: '1 0 40%',
@@ -140,38 +145,45 @@ const Work = () => {
             src={contentSidebar}
             alt='work section sidebar'
           />
-          <Card className={classes.projectCard}>
-            <CardHeader
-              action={
-                <IconButton
-                  component='a'
-                  href={project.repository}
-                  target='_blank'
-                  aria-label='GitHub Link'
-                >
-                  <GitHubIcon />
-                </IconButton>
-              }
-              title={project.name}
-              subheader={project.year}
-            />
-            <CardContent className={classes.projectCardContent}>
-              <Typography variant='body2' color='textSecondary' component='p'>
-                {project.description}
-              </Typography>
-            </CardContent>
-            <CardActions className={classes.projectCardActions}>
-              {project.chips.map((chip, index) => (
-                <Chip
-                  key={index}
-                  label={chip.label}
-                  style={{
-                    color: `${chip.textColor}`,
-                    backgroundColor: `${chip.backgroundColor}`,
-                  }}
-                />
-              ))}
-            </CardActions>
+          <Card>
+            <ButtonBase
+              className={classes.projectCard}
+              onClick={(e) => {
+                window.open(project.repository, '_blank');
+              }}
+            >
+              <CardHeader
+                action={
+                  <IconButton
+                    component='a'
+                    href={project.repository}
+                    target='_blank'
+                    aria-label='GitHub Link'
+                  >
+                    <GitHubIcon />
+                  </IconButton>
+                }
+                title={project.name}
+                subheader={project.year}
+              />
+              <CardContent className={classes.projectCardContent}>
+                <Typography variant='body2' color='textSecondary' component='p'>
+                  {project.description}
+                </Typography>
+              </CardContent>
+              <CardActions className={classes.projectCardActions}>
+                {project.chips.map((chip, index) => (
+                  <Chip
+                    key={index}
+                    label={chip.label}
+                    style={{
+                      color: `${chip.textColor}`,
+                      backgroundColor: `${chip.backgroundColor}`,
+                    }}
+                  />
+                ))}
+              </CardActions>
+            </ButtonBase>
           </Card>
         </div>
       ))}
